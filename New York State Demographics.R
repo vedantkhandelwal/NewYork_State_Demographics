@@ -116,6 +116,8 @@ training_set <- subset(dataset, split==TRUE)
 nrow(training_set) 
 test_set <- subset(dataset, split == FALSE) 
 nrow(test_set)
+training_set[,2:5] <- scale(training_set[,2:5]) 
+test_set[,2:5] <- scale(test_set[,2:5]) 
 
 #####Model building using all variables
 model1 <- lm(MALE_FEM ~ .,data = training_set) 
