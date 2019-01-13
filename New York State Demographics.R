@@ -105,8 +105,9 @@ summary(dataset$MALE_FEM)
 #####650 rows are left
 nrow(dataset)
 
+#Correlation between variables
 library(GGally)
-ggcorr(dataset)
+ggcorr(dataset,label = TRUE)
 dataset <- dataset[,2:6] 
 library(caTools) 
 set.seed(123) 
